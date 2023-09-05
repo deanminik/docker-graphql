@@ -37,14 +37,14 @@ jobs:
       env:
         NEW_VERSION: ${{ steps.version.outputs.version }}
       run: |
-        docker build -t deanminik/docker-graphql:$EW_VERSION .
+        docker build -t deanminik/docker-graphql:$NEW_VERSION .
         docker build -t deanminik/docker-graphql:latest .
 
     - name: Push Docker Image
       env:
         NEW_VERSION: ${{ steps.version.outputs.version }}
       run: |
-        docker push deanminik/docker-graphql:$EW_VERSION
+        docker push deanminik/docker-graphql:$NEW_VERSION
         docker push deanminik/docker-graphql:latest
     
 #    - name: Build the Docker image
